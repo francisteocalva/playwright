@@ -1,7 +1,7 @@
 import{test, expect} from '@playwright/test';
 
 
-test.only('specloc test', async function ({browser}) {
+test('specloc test', async function ({browser}) {
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -24,4 +24,29 @@ test.only('specloc test', async function ({browser}) {
     //test
     //await page.pause();
 
+})
+
+
+test.only('promise', async function ({browser}) {
+
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+
+    const [arr] = await Promise.all([
+        context.waitForEvent("page"), await page.getByText("Free Access to InterviewQues/ResumeAssistance/Material").click()
+    ]);
+
+
+    //await arr.pause();
+
+    const textval = await arr.locator(".im-para.red").textContent();
+    const lim = textval.split("@")[1].split(" ")[0];
+
+    await page.locator(".form-control").first().pressSequentially(lim);
+
+    await page.pause();
+
+    
 })

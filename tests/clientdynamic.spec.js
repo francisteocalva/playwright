@@ -235,7 +235,7 @@ await page.pause();
 
 
 
-test.only('card 6', async function ({browser}) {
+test('card 6', async function ({browser}) {
     
     const context = await browser.newContext();
     const page = await context.newPage();
