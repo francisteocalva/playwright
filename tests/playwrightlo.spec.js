@@ -81,9 +81,11 @@ test.only('looping', async function ({browser}) {
      //console.log(value);
      if(value.trim()==="Samsung Note 8"){
         //await parent.locator("text='Add '").nth(i).click();
-        await parent.locator("[class='btn btn-info']").nth(i).click();
+        await parent.getByRole("button",{name: 'Add'}).nth(i).click();
+        //await parent.locator("[class='btn btn-info']").nth(i).click();
+        await parent.locator().setInputFiles();
         break;
-        
+
      }
 
     }
