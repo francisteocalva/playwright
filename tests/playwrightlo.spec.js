@@ -27,7 +27,7 @@ test('specloc test', async function ({browser}) {
 })
 
 
-test.only('promise', async function ({browser}) {
+test('promise', async function ({browser}) {
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -49,4 +49,40 @@ test.only('promise', async function ({browser}) {
     await page.pause();
 
     
+})
+
+
+test.only('without net', async function ({browser}) {
+
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    await page.goto("site");
+    const [arra] = await Promise.all([
+        await context.waitForEvent('page'), await page.locator("").click()
+    ])
+    
+    const value = await arra.locator("").textContent();
+    const cutt = value.split("@")[1].split(" ")[0];
+    
+    await page.locator("").pressSequentially(cutt);
+
+})
+
+
+
+test.only('looping', async function ({browser}) {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+    
+    await page.goto("");
+    const parent = page.locator(".card-body");
+    for(let i=0; i<await parent.count(); i++){
+     const value =await parent.locator(".card-title").nth(i).textContent();
+     if(value==="Samsung Note 8"){
+        await parent.locator(".btn.btn-info").nth(i).click();
+
+     }
+
+    }
+    await page.pause();
 })
