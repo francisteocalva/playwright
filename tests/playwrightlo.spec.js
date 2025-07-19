@@ -52,7 +52,7 @@ test('promise', async function ({browser}) {
 })
 
 
-test.only('without net', async function ({browser}) {
+test('without net', async function ({browser}) {
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -74,15 +74,20 @@ test.only('looping', async function ({browser}) {
     const context = await browser.newContext();
     const page = await context.newPage();
     
-    await page.goto("");
-    const parent = page.locator(".card-body");
+    await page.goto("https://rahulshettyacademy.com/angularpractice/shop");
+    const parent = page.locator(".col-lg-3");
     for(let i=0; i<await parent.count(); i++){
      const value =await parent.locator(".card-title").nth(i).textContent();
-     if(value==="Samsung Note 8"){
-        await parent.locator(".btn.btn-info").nth(i).click();
-
+     //console.log(value);
+     if(value.trim()==="Samsung Note 8"){
+        //await parent.locator("text='Add '").nth(i).click();
+        await parent.locator("[class='btn btn-info']").nth(i).click();
+        break;
+        
      }
 
     }
     await page.pause();
 })
+
+
