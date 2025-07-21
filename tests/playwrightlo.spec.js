@@ -70,7 +70,7 @@ test('without net', async function ({browser}) {
 
 
 
-test.only('looping', async function ({browser}) {
+test('looping', async function ({browser}) {
     const context = await browser.newContext();
     const page = await context.newPage();
     
@@ -94,3 +94,35 @@ test.only('looping', async function ({browser}) {
 })
 
 
+
+test('hosp', async function ({browser}) {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto();
+    const parentlo = page.locator("");
+
+    for(let i=0; i< await parentlo.count(); i++){
+        const getText = await parentlo.locator("").nth(i).textContent();
+        if(getText.trim()==="test")
+            {
+                await parentlo.locator("").nth(i).click();
+        }
+    }
+    
+})
+
+
+test('string', async function ({browser}) {
+
+
+    const mystring = 'DaD'
+    //console.log(mystring.length)
+    let retVal = ""
+    for(let i=0; i< mystring.length; i++){
+        retVal = mystring.charAt(i)+retVal;    
+    }
+    console.log(retVal+'here');
+
+    
+})
