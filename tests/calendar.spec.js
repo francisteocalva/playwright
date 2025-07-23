@@ -36,7 +36,7 @@ test('calendar', async function ({browser }) {
 })
 
 
-test.only("Calendar validations",async({page})=>
+test("Calendar validations",async({page})=>
 {
  
     const monthNumber = "6";
