@@ -3,7 +3,6 @@ const payload = { userEmail: "vrt@gg2.com", userPassword: "@Karen23" }
 let tokens;
 
 test.beforeAll(async function () {
-
     const apiContext = await request.newContext();
     const loginR = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login",
         {
@@ -18,16 +17,11 @@ test.beforeAll(async function () {
 
 
 test.only('login2', async function ({ browser }) {
-
     const context = await browser.newContext();
     const page = await context.newPage();
-
-
-    page.addInitScript(function(value) {
+    page.addInitScript(function (value) {
         window.localStorage.setItem('token', value);
     }, tokens);
-
-
     await page.goto("https://rahulshettyacademy.com/client");
     // await page.locator("#userEmail").fill("vrt@gg2.com");
     // await page.locator("#userPassword").fill("@Karen23");
@@ -39,7 +33,7 @@ test.only('login2', async function ({ browser }) {
     const alltt = await page.locator(".card-body b").allTextContents();
     console.log(alltt.at(2).toString());
 
-   await page.pause();
+    await page.pause();
 
 
 })
