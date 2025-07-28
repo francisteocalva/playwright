@@ -19,7 +19,7 @@ test.beforeAll(async function () {
 test.only('login2', async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();
-    page.addInitScript(function (value) {
+    await page.addInitScript(function (value) {
         window.localStorage.setItem('token', value);
     }, tokens);
     await page.goto("https://rahulshettyacademy.com/client");
