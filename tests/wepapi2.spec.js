@@ -26,6 +26,6 @@ test.only('main', async function ({ browser }) {
     }, tokens);
     await page.goto("https://rahulshettyacademy.com/client");
     await expect(page).toHaveTitle("Let's Shop");
-    await page.pause();
+    //await page.pause();
 
 })
