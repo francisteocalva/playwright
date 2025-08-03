@@ -2,7 +2,6 @@ const { test, expect } = require('@playwright/test')
 let webcontext
 
 
-
 test.beforeAll(async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -15,14 +14,11 @@ test.beforeAll(async function ({ browser }) {
     await page.waitForLoadState("networkidle");
 
     await context.storageState({ path: 'state.json' })
-
-    webcontext = await browser.newContext({ storageState: 'state.json' })
+    webcontext = await browser.newContext({ storageState: 'state.json' });
 })
 
 
-
-test('TC', async function () {
-    //await page.goto("")
+test('TC1', async function () {
     const page = await webcontext.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
     const alltt = await page.locator(".card-body b").nth(0).textContent();
@@ -35,6 +31,7 @@ test('TC2', async function () {
     const page = await webcontext.newPage();
     await page.goto("https://rahulshettyacademy.com/client");    //const alltt = await page.locator(".card-body b").allTextContents();
     //console.log(alltt.at(2).toString());
+    await page.waitForLoadState('networkidle');
     const parent = page.locator(".card-body");
     const counter = await parent.count();
     // const expected = 'ADIDAS ORIGINAL';
@@ -57,6 +54,7 @@ test('TC3', async function () {
     const page = await webcontext.newPage();
     await page.goto("https://rahulshettyacademy.com/client");    //const alltt = await page.locator(".card-body b").allTextContents();
     //console.log(alltt.at(2).toString());
+    await page.waitForLoadState('networkidle');
     const parent = page.locator(".card-body");
     const counter = await parent.count();
     // const expected = 'ADIDAS ORIGINAL';
@@ -69,6 +67,5 @@ test('TC3', async function () {
         }
 
     }
-    // await page.pause();
 
 });
