@@ -69,3 +69,9 @@ test('TC3', async function () {
     }
 
 });
+
+
+test('TC4', async function ({browser}) {
+    const context = await browser.newContext();
+    const page = await context.newPage();
+})

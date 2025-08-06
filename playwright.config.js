@@ -43,7 +43,7 @@ const config = defineConfig({
     headless: false,
     viewport: null,
     screenshot: 'on',
-    trace: 'retain-on-failure', //on(for all test) or etain-on-failure
+    trace: 'retain-on-failure', //on(for all test) or retain-on-failure
     launchOptions: {
       args: ['--start-maximized']
     }
