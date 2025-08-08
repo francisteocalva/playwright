@@ -173,7 +173,7 @@ test('add cart 4', async function ({browser}) {
 
 
 
-test('add cart 5', async function ({browser}) {
+test.only('add cart 5', async function ({browser}) {
 
     const context = await browser.newContext();
     const page = await context.newPage();
