@@ -1,22 +1,19 @@
 const { test, expect } = require('@playwright/test');
-//const { loginpage3 } = require('../pageobject/Loginpage3')
-//const { dashboard } = require('../pageobject/Dashboard')
-const {pomanager} = require('../pageobject/PoManager2')
+const { pomanager } = require('../pageobject/PoManager2')
+const dateset = JSON.parse(JSON.stringify(require('../utils/placeholder.json')));
 
 test('TC2', async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();
-    const username = "vrt@gg2.com";
-    const password = "@Karen23";
     const poManager = new pomanager(page);
-    
+
     const logp = poManager.getLoginPage() //loginpage3(page);
     await logp.url();
-    await logp.login(username, password);
+    await logp.login(dateset.username, dateset.password);
 
     const dash = poManager.getDashboard()//dashboard(page);
-    const searchV = 'ADIDAS ORIGINAL'
-    await dash.search(searchV);
+    //const searchV = 'ADIDAS ORIGINAL'
+    await dash.search(dateset.search);
 
     await page.locator("[routerlink*='cart']").click();
     await page.locator("li div").last().waitFor();
@@ -39,5 +36,5 @@ test('TC2', async function ({ browser }) {
             await p.nth(v).click();
         }
     }
-    await page.pause();
+    //await page.pause();
 })
