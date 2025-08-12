@@ -173,7 +173,7 @@ test('add cart 4', async function ({browser}) {
 
 
 
-test.only('add cart 5', async function ({browser}) {
+test('add cart 5', async function ({browser}) {
 
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -223,7 +223,7 @@ for(let v=0; v< await p.count(); v++){
 //for(let v=0;)
 
 
-await page.pause();
+//await page.pause();
 
 
 
@@ -235,7 +235,7 @@ await page.pause();
 
 
 
-test('card 6', async function ({browser}) {
+test.only('card 6', async function ({browser}) {
     
     const context = await browser.newContext();
     const page = await context.newPage();
@@ -292,7 +292,7 @@ test('card 6', async function ({browser}) {
     //get the email above
     const parentde = page.locator(".details__user");
     const getVald = await parentde.locator('[type="text"]').first().textContent();
-    expect(getVald).toEqual("vrt@gg2.com");
+    expect(getVald).toEqual("vrt@gg2.comsad");
     await parentde.locator("text=Place Order ").click();
     //get the thank you message
     const thanks = page.locator(".hero-primary");

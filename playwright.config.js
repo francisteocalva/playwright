@@ -29,7 +29,7 @@
 
 // module.exports =config
 
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 const config = defineConfig({
   testDir: './tests',
@@ -40,9 +40,11 @@ const config = defineConfig({
   reporter: 'html',
   use: {
     browserName: 'chromium',
-    headless: true,
+    headless: false,
     viewport: null,
     screenshot: 'on',
+    video: 'retain-on-failure',
+    //...devices['Galaxy S24'],
     trace: 'retain-on-failure', //on(for all test) or retain-on-failure
     launchOptions: {
       args: ['--start-maximized']

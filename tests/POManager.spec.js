@@ -15,7 +15,7 @@ test(`TC2 ${data.product}`, async function ({ browser }) {
     const dashb = poms.getDashboard();
     await dashb.clickButton(data.product);
 
-    await page.pause();
+    //await page.pause();
     
 
 })}
