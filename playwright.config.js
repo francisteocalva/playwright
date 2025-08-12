@@ -40,7 +40,7 @@ const config = defineConfig({
   reporter: 'html',
   use: {
     browserName: 'chromium',
-    headless: false,
+    headless: true,
     viewport: null,
     screenshot: 'on',
     trace: 'retain-on-failure', //on(for all test) or retain-on-failure
