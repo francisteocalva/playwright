@@ -33,6 +33,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 const config = defineConfig({
   testDir: './tests',
+  retries: 2,
   timeout: 20000 * 3,
   expect: {
     timeout: 25000

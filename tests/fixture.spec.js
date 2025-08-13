@@ -8,6 +8,6 @@ testing('Uisng fixture', async function ({logginpage}) {
     //await expect(logginpage).toHaveURL("asd");
     const dash = new dashboardF(logginpage)
     await dash.clickButton("ADIDAS ORIGINAL");
-    //await logginpage.locator("#sad").click();
+    await logginpage.locator("#sad").click();
     //await logginpage.pause();
 })
