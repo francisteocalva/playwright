@@ -1,8 +1,10 @@
 const { expect, test } = require('@playwright/test');
 let webcontext;
 
-test.beforeAll(async function ({ browser }) {
 
+
+test.describe.configure({ mode: 'parallel' })
+test.beforeAll(async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
@@ -22,6 +24,7 @@ test('here2', async function () {
     await page.goto("https://rahulshettyacademy.com/client");
     const alltt = await page.locator(".card-body b").nth(0).textContent();
     console.log(alltt);
+    await page.locator("present").click();
 
 })
 

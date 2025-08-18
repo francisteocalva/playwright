@@ -1,5 +1,5 @@
 const {test,expect} = require('@playwright/test')
-const {LoginPage} = require('../pageobject/Loginpage')
+const {LoginPage} = require('../pageobject/LoginPageF')
 
 
 test('add cart 5', async function ({browser}) {

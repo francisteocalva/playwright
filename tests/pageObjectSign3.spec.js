@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { pomanager } = require('../pageobject/PoManager2')
+const { pomanager } = require('../pageobject/POManagerF')
 const dateset = JSON.parse(JSON.stringify(require('../utils/placeholder.json')));
 
 test('TC2', async function ({ browser }) {
