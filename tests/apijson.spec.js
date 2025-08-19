@@ -3,7 +3,7 @@ let webcontext;
 
 
 
-test.describe.configure({ mode: 'parallel' })
+test.describe.configure({ mode: 'serial' })
 test.beforeAll(async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();

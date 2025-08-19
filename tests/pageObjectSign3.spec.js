@@ -1,19 +1,19 @@
 const { test, expect } = require('@playwright/test');
-const { pomanager } = require('../pageobject/POManagerF')
+const { POManagerFs } = require('../pageobject/POManagerF')
 const dateset = JSON.parse(JSON.stringify(require('../utils/placeholder.json')));
 
-test('TC2', async function ({ browser }) {
+test('@Web TC2', async function ({ browser }) {
     const context = await browser.newContext();
     const page = await context.newPage();
-    const poManager = new pomanager(page);
+    const poManager = new POManagerFs(page);
 
-    const logp = poManager.getLoginPage() //loginpage3(page);
-    await logp.url();
+    const logp = poManager.getLogin() //loginpage3(page);
+    await logp.goTO(dateset.url);
     await logp.login(dateset.username, dateset.password);
 
     const dash = poManager.getDashboard()//dashboard(page);
     //const searchV = 'ADIDAS ORIGINAL'
-    await dash.search(dateset.search);
+    await dash.clickButton(dateset.search);
 
     await page.locator("[routerlink*='cart']").click();
     await page.locator("li div").last().waitFor();
