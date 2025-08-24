@@ -28,7 +28,7 @@ test('Add to cart', async function ({browser}) {
         }
 
     }
-    await page.pause();
+    //await page.pause();
 });
 
 
@@ -62,7 +62,7 @@ test('add cart 2', async function({browser}) {
     expect(retText).toBeTruthy();
 
 
-    await page.pause();
+    //await page.pause();
 
 })
 
@@ -163,7 +163,7 @@ test('add cart 4', async function ({browser}) {
     }
 
 
-    await page.pause();
+    //await page.pause();
 
 
     // const parentdrop = page.locator("test");
@@ -321,6 +321,6 @@ test.only('card 6', async function ({browser}) {
 
     const idmain=  await page.locator(".col-text.-main").textContent();
     expect(orderID.includes(idmain)).toBeFalsy();
-    await page.pause();
+    //await page.pause();
 
 })

@@ -33,7 +33,7 @@ test.only('login2', async function ({ browser }) {
     const alltt = await page.locator(".card-body b").allTextContents();
     console.log(alltt.at(2).toString());
 
-    await page.pause();
+    //await page.pause();
 
 
 })

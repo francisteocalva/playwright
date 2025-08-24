@@ -1,0 +1,12 @@
+https://github.com/microsoft/playwright
+1. Install node js npm --version and node --version
+2. Install VS IDE
+3. Install playwright npm init playwright@latest
+4. playwright.config.js = runner
+5. npx playwright test = exeute test or npx playwright test/specifcfile
+6. npx playwright test --debug
+7. npx playwright test --ui
+
+
+java -jar jenkins.war -httpPort=8080
+http://localhost:8080/job/plawrightTest/

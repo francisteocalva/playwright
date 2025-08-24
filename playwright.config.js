@@ -41,7 +41,7 @@ const config = defineConfig({
   reporter: 'html',
   use: {
     browserName: 'chromium',
-    headless: false,
+    headless: true,
     viewport: null,
     screenshot: 'on',
     video: 'retain-on-failure',
