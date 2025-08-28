@@ -2,7 +2,10 @@
   "name": "tubeplaywright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "alltst": "npx playwright test",
+    "tst": "npx playwright test pageObjectSign3.spec.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
