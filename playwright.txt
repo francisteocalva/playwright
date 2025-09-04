@@ -10,3 +10,4 @@ https://github.com/microsoft/playwright
 
 java -jar jenkins.war -httpPort=8080
 http://localhost:8080/job/plawrightTest/
+npm install @cucumber/cucumber
